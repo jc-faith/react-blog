@@ -7,7 +7,11 @@ import Tag from './tag'
 //引入图片
 import user from '../../assets/img/user.jpeg';
 
-export default class SideBar extends React.Component {
+class SideBar extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
     render() {
         return(
             <div style={this.props.style}>
@@ -17,25 +21,29 @@ export default class SideBar extends React.Component {
                     display:'flex',
                     justifyContent:'center',
                     alignItems:'center',
-                    flexDirection:'column'
+                    flexDirection:'column',
+                    minHeight:'320px'
                 }}>
                     <img src={user} style={{
                         width:'180px',
                         height:'180px',
                         borderRadius:'50%'
                     }}/>
-                    <h3>咸鱼的博客</h3>
+                    <h3 style={{
+                        color:'#eee'
+                    }}>咸鱼的博客</h3>
                     <Link  to='/admin' style={{
                         textDecoration:'none',
-                        color:'#222',
+                        color:'#eee',
                         fontSize:'14px',
                         marginTop:'8px'
                     }}>管理博客</Link>
                 </header>
                 <section style={{
-                    flex:'4',
+                    flex:'5',
                     display:'flex',
                     flexDirection:'column',
+                    minHeight:'350px'
                 }}>
                     <div style={{
                         height:'20px',
@@ -69,3 +77,5 @@ export default class SideBar extends React.Component {
         )
     }
 }
+
+export default SideBar

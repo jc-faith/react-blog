@@ -1,13 +1,20 @@
 import React from "react";
+import {withRouter} from 'react-router-dom'
 
-export default class MessageBoard extends React.Component {
+class FileDown extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
+        console.log(this.props.location.state)
+        this.componentWillUnmount = this.componentWillUnmount.bind(this)
     }
+    componentWillUnmount() {
+        console.log(this.props.location.state)
+    }
+
     render() {
         return(
-            <h1>文章显示:{this.props.location}</h1>
+            <h1>文章内容:{this.props.location.state ? this.props.location.state.name : ''}</h1>
         )
     }
 }
+export default withRouter(FileDown)

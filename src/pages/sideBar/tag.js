@@ -38,16 +38,17 @@ export default class Tag extends React.Component {
             }}>
                 <header style={{
                     borderBottom:'2px solid #afb76c',
-                    padding:'2px 0'
+                    padding:'2px 0',
+                    color:'#eee'
                 }}>
-                    标签
+                    标签云
                 </header>
                 <main style={{
                     padding:'8px 0'
                 }}>
                     {
                         tags.map(el=>{
-                            return <Link style={linkCss} to={"?id="+el.tag} key={new Date().getTime()+Math.random().toString()}>{el.name}</Link>
+                            return <Link style={linkCss} to={{ pathname : '/user/article', state : { id: el.tag ,name:el.name}}} key={new Date().getTime()+Math.random().toString()}>{el.name}</Link>
                         })
                     }
                 </main>

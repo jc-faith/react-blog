@@ -6,12 +6,11 @@ import user from '../../assets/img/user.jpeg';
 const linkCss = {
     fontSize:'14px',
     textDecoration:'none',
-    color:'#222',
+    color:'#eee',
     padding:'2px 0',
-    fontWeight:'400'
+    fontWeight:'500'
 
 }
-
 
 
 export default class Menu extends React.Component{
